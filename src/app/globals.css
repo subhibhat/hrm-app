@@ -6,8 +6,11 @@
 	--primary-foreground: #FFFFFF;
 	--primary: #3D61FB;
 	--border: #E6E7EC;
+	--hover: #EDEDED;
 
 	--input-default: #FFFFFF;
+	--background: #E6E7EC;
+	--sidebar-background: #FCFBFC;
 }
 
 /* 
