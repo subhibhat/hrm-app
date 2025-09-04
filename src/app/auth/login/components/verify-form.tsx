@@ -1,6 +1,6 @@
 export default function VerifyForm({ onSubmit, setShowMfa }) {
 	return (
-		<form onSubmit={onSubmit} className=" flex w-full flex-col items-start gap-5 self-stretch ">
+		<form onSubmit={onSubmit} className=" flex w-full flex-col items-start gap-[38px] self-stretch ">
 			<div className=" flex flex-col items-start gap-3 self-stretch ">
 				<h1 className=" text-[var(--text-primary)] text-center text-[26px] font-medium not-italic ">Enter verification code</h1>
 				<h2 className=" text-[var(--text-secondary)] ">Please choose a verification method and enter the code to continue.</h2>

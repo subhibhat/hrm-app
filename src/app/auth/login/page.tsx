@@ -10,8 +10,6 @@ export default function Page() {
 
 	const handleLoginSubmit = async () => {
 		setShowMfa(true)
-		console.log('Login submitted', loading)
-		console.log('Show MFA', showMfa)
 	}
 
 	const handleVerifySubmit = async () => {
