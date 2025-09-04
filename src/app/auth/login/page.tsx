@@ -1,50 +1,24 @@
+'use client';
+
+import { useState } from "react";
+import LoginForm from "./components/login-form";
+import VerifyForm from "./components/verify-form";
+
 export default function Page() {
+	const [loading, setLoading] = useState(false)
+	const [showMfa, setShowMfa] = useState(false)
+
+	const handleLoginSubmit = async () => {
+		setShowMfa(true)
+		console.log('Login submitted', loading)
+		console.log('Show MFA', showMfa)
+	}
+
+	const handleVerifySubmit = async () => {
+		setLoading(true)
+	}
+
 	return (
-		<div className=" flex h-full justify-center items-center ">
-			<div className=" flex ">
-				<div className=" flex w-[427px] p-[30px] flex-col items-start gap-[38px] shrink-0 border-[1px] border-solid border-[var(--border)] rounded-2xl ">
-					<div className=" flex flex-col items-start gap-3 self-stretch ">
-						<h1 className=" text-[var(--text-primary)] text-center text-[26px] font-medium not-italic ">Log in</h1>
-						<h2 className=" text-[var(--text-secondary)] ">Human Resource & Workload Management Platform.</h2>
-					</div>
-					<div className=" flex w-full flex-col items-start gap-5 self-stretch ">
-						<label className=" flex flex-col items-start gap-2 self-stretch ">
-							<span>Email Address</span>
-							<div className=" flex h-[44px] py-0 px-3.5 items-center gap-2.5 self-stretch rounded-lg border-[1px] border-solid border-[var(--border)] ">
-								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" viewBox="0 0 16 13" fill="none">
-									<path d="M0.5 4.0475V10.25C0.5 10.913 0.763392 11.5489 1.23223 12.0178C1.70107 12.4866 2.33696 12.75 3 12.75H13C13.663 12.75 14.2989 12.4866 14.7678 12.0178C15.2366 11.5489 15.5 10.913 15.5 10.25V2.75C15.5 2.08696 15.2366 1.45107 14.7678 0.982233C14.2989 0.513392 13.663 0.25 13 0.25H3C2.33696 0.25 1.70107 0.513392 1.23223 0.982233C0.763392 1.45107 0.5 2.08696 0.5 2.75V4.0475ZM3 1.5H13C13.3315 1.5 13.6495 1.6317 13.8839 1.86612C14.1183 2.10054 14.25 2.41848 14.25 2.75V3.675L8 7.04L1.75 3.675V2.75C1.75 2.41848 1.8817 2.10054 2.11612 1.86612C2.35054 1.6317 2.66848 1.5 3 1.5ZM1.75 5.095L7.70375 8.3C7.7948 8.34901 7.89659 8.37467 8 8.37467C8.10341 8.37467 8.2052 8.34901 8.29625 8.3L14.25 5.095V10.25C14.25 10.5815 14.1183 10.8995 13.8839 11.1339C13.6495 11.3683 13.3315 11.5 13 11.5H3C2.66848 11.5 2.35054 11.3683 2.11612 11.1339C1.8817 10.8995 1.75 10.5815 1.75 10.25V5.095Z" fill="#969696"/>
-								</svg>
-								<input type="email" placeholder="example@email.com" className=" flex w-full h-full px-0 py-3.5 items-center gap-2.5 self-stretch focus:outline-none " />
-							</div>
-						</label>
-						<label className=" flex flex-col items-start gap-2 self-stretch ">
-							<span>Password</span>
-							<div className=" flex h-[44px] py-0 px-3.5 items-center gap-2.5 self-stretch rounded-lg border-[1px] border-solid border-[var(--border)] ">
-								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-									<path d="M11.25 11.75C11.25 12.0815 11.1183 12.3995 10.8839 12.6339C10.6495 12.8683 10.3315 13 10 13C9.66848 13 9.35054 12.8683 9.11612 12.6339C8.8817 12.3995 8.75 12.0815 8.75 11.75C8.75 11.4185 8.8817 11.1005 9.11612 10.8661C9.35054 10.6317 9.66848 10.5 10 10.5C10.3315 10.5 10.6495 10.6317 10.8839 10.8661C11.1183 11.1005 11.25 11.4185 11.25 11.75ZM6.25 5.5H5.625C4.7962 5.5 4.00134 5.82924 3.41529 6.41529C2.82924 7.00134 2.5 7.7962 2.5 8.625V14.875C2.5 15.7038 2.82924 16.4987 3.41529 17.0847C4.00134 17.6708 4.7962 18 5.625 18H14.375C15.2038 18 15.9987 17.6708 16.5847 17.0847C17.1708 16.4987 17.5 15.7038 17.5 14.875V8.625C17.5 7.7962 17.1708 7.00134 16.5847 6.41529C15.9987 5.82924 15.2038 5.5 14.375 5.5H13.75V4.875C13.75 3.88044 13.3549 2.92661 12.6517 2.22335C11.9484 1.52009 10.9946 1.125 10 1.125C9.00544 1.125 8.05161 1.52009 7.34835 2.22335C6.64509 2.92661 6.25 3.88044 6.25 4.875V5.5ZM7.5 4.875C7.5 4.21196 7.76339 3.57607 8.23223 3.10723C8.70107 2.63839 9.33696 2.375 10 2.375C10.663 2.375 11.2989 2.63839 11.7678 3.10723C12.2366 3.57607 12.5 4.21196 12.5 4.875V5.5H7.5V4.875ZM14.375 6.75C14.8723 6.75 15.3492 6.94754 15.7008 7.29917C16.0525 7.65081 16.25 8.12772 16.25 8.625V14.875C16.25 15.3723 16.0525 15.8492 15.7008 16.2008C15.3492 16.5525 14.8723 16.75 14.375 16.75H5.625C5.12772 16.75 4.65081 16.5525 4.29917 16.2008C3.94754 15.8492 3.75 15.3723 3.75 14.875V8.625C3.75 8.12772 3.94754 7.65081 4.29917 7.29917C4.65081 6.94754 5.12772 6.75 5.625 6.75H14.375Z" fill="#969696"/>
-								</svg>
-								<input type="password" className=" flex w-full h-full px-0 py-3.5 items-center gap-2.5 self-stretch focus:outline-none " />
-								<svg xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none">
-									<path d="M4.10284 12.3594V12.3635C4.07968 12.4508 4.03954 12.5327 3.98471 12.6045C3.92987 12.6764 3.86142 12.7366 3.78327 12.782C3.70511 12.8273 3.61879 12.8568 3.52924 12.8688C3.43968 12.8807 3.34865 12.8749 3.26134 12.8516C2.66872 12.6949 2.77322 12.0115 2.77322 12.0115L2.79797 11.9263C2.79797 11.9263 2.83372 11.8108 2.86259 11.7269C3.21545 10.7375 3.73489 9.81584 4.39847 9.00163C5.63184 7.49738 7.70672 6 10.9998 6C14.293 6 16.3678 7.49738 17.6026 9.00163C18.2662 9.81584 18.7856 10.7375 19.1385 11.7269C19.1681 11.8119 19.1956 11.8976 19.221 11.984L19.2251 12.0019V12.0074L19.2265 12.0101C19.2701 12.1851 19.2432 12.3702 19.1516 12.5256C19.06 12.6809 18.911 12.7941 18.7368 12.8406C18.5625 12.8871 18.377 12.8633 18.2201 12.7744C18.0633 12.6854 17.9477 12.5383 17.8982 12.3649L17.8968 12.3594L17.8858 12.325L17.8377 12.1751C17.538 11.3398 17.0987 10.5615 16.5383 9.87337C15.5181 8.629 13.8117 7.375 10.9998 7.375C8.18797 7.375 6.48297 8.629 5.46134 9.87337C4.90103 10.5615 4.46166 11.3398 4.16197 12.1751L4.11384 12.325L4.10284 12.3594ZM10.9998 10.125C10.0882 10.125 9.21382 10.4872 8.56916 11.1318C7.92451 11.7765 7.56234 12.6508 7.56234 13.5625C7.56234 14.4742 7.92451 15.3485 8.56916 15.9932C9.21382 16.6378 10.0882 17 10.9998 17C11.9115 17 12.7859 16.6378 13.4305 15.9932C14.0752 15.3485 14.4373 14.4742 14.4373 13.5625C14.4373 12.6508 14.0752 11.7765 13.4305 11.1318C12.7859 10.4872 11.9115 10.125 10.9998 10.125ZM8.93734 13.5625C8.93734 13.0155 9.15464 12.4909 9.54143 12.1041C9.92823 11.7173 10.4528 11.5 10.9998 11.5C11.5469 11.5 12.0715 11.7173 12.4583 12.1041C12.845 12.4909 13.0623 13.0155 13.0623 13.5625C13.0623 14.1095 12.845 14.6341 12.4583 15.0209C12.0715 15.4077 11.5469 15.625 10.9998 15.625C10.4528 15.625 9.92823 15.4077 9.54143 15.0209C9.15464 14.6341 8.93734 14.1095 8.93734 13.5625Z" fill="#969696"/>
-								</svg>
-							</div>
-						</label>
-						<div className=" flex items-center gap-[18px] self-stretch ">
-							<label className=" flex items-center gap-2.5 flex-[1_0_0] text-[var(--text-secondary)] ">
-								<input className=" hidden peer " type="checkbox" />
-								<div className=" w-[22px] h-[22px] aspect-square flex items-center justify-center appearance-none rounded-md border-[1px] border-solid border-[var(--border)] peer-checked:bg-[var(--primary)] peer-checked:border-[var(--primary)] ">
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-										<path d="M3.3335 8.00002L6.66683 11.3334L13.3335 4.66669" stroke="white" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round"/>
-									</svg>
-								</div>
-								<span>Remember me</span>
-							</label>
-							<div className=" cursor-pointer text-[var(--primary)] ">Forgot password?</div>
-						</div>
-					</div>
-					<button className=" flex w-full h-[44px] justify-center items-center gap-2.5 self-stretch rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)] ">Sign In</button>
-				</div>
-			</div>
-		</div>
+		showMfa ? <VerifyForm onSubmit={handleVerifySubmit} setShowMfa={setShowMfa} /> : <LoginForm onSubmit={handleLoginSubmit} />
 	)
 }
