@@ -141,7 +141,7 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
 
 				</div>
 			</div>
-			<div className=" flex w-full flex-col h-[9000px] ">
+			<div className=" flex w-full flex-col ">
 				<div className=" flex h-[68px] w-full py-0 px-5 justify-between items-center self-stretch border-b-[0.5px] border-solid border-[var(--border)] bg-[var(--primary-foreground)] ">
 					<div className=" text-[var(--text-primary)] text-[22px] not-italic font-normal leading-[110%]  ">Profile</div>
 					<div className=" flex items-center gap-6 ">

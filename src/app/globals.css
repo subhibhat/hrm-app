@@ -9,7 +9,9 @@
 	--hover: #EDEDED;
 
 	--input-default: #FFFFFF;
+	--input-disabled: #FCFCFC;
 	--background: #E6E7EC;
+	--background-secondary: #FAFBFB;
 	--sidebar-background: #FCFBFC;
 }
 
