@@ -1,7 +1,7 @@
 export default function ProfilePage() {
 	return (
 		<>
-			<div className=" flex p-[30px] pb-0 flex-col items-start gap-[10px] self-stretch border-b-[0.5px] border-solid border-[var(--border)] ">
+			<div className=" flex p-[30px] pb-0 flex-col items-start gap-[30px] self-stretch border-b-[0.5px] border-solid border-[var(--border)] ">
 				<div className=" flex items-center gap-8 ">
 					<div className=" flex flex-col items-start gap-2.5 ">
 						<h1 className=" text-[var(--text-primary)] text-[26px] not-italic font-medium leading-[110%] tracking-[-0.52px] ">User Management</h1>

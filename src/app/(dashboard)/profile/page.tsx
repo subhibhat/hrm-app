@@ -1,7 +1,7 @@
 export default function ProfilePage() {
 	return (
 		<>
-			<div className=" flex p-[30px] pb-0 flex-col items-start gap-[10px] self-stretch border-b-[0.5px] border-solid border-[var(--border)] ">
+			<div className=" flex p-[30px] pb-0 flex-col items-start gap-[30px] self-stretch border-b-[0.5px] border-solid border-[var(--border)] ">
 				<div className=" flex items-center gap-8 ">
 					<div className=" flex items-center gap-3.5 ">
 						<div className=" w-[50px] h-[50px] aspect-square rounded-full bg-[var(--border)] "></div>
