@@ -88,8 +88,8 @@ export default function JobTable() {
 							</td>
 							<td>
 								<div className=" flex h-[66px] py-3.5 px-0 items-center gap-1 ">
-									{job.key_responsibility.map(responsibility => (
-										<div className=" flex py-0.5 px-2 justify-center items-center gap-2.5 rounded-md border border-solid border-[var(--border)] bg-[var(--background-secondary)] text-xs not-italic font-medium leading-normal ">{responsibility.name}</div>
+									{job.key_responsibility.map((responsibility, index) => (
+										<div key={index+`_responsibility`} className=" flex py-0.5 px-2 justify-center items-center gap-2.5 rounded-md border border-solid border-[var(--border)] bg-[var(--background-secondary)] text-xs not-italic font-medium leading-normal ">{responsibility.name}</div>
 										))}
 								</div>
 							</td>

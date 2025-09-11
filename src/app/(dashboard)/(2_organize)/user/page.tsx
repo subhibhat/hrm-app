@@ -1,15 +1,12 @@
 'use client';
 
-import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import UserTable from "./components/user-table";
 import JobTable from "./components/job-table";
 import RoleTable from "./components/role-table";
 
 export default function ProfilePage() {
 
-	const params = useSearchParams()
-	const router = useRouter()
 	const [currentTab, setCurrentTab] = useState<string>('users')
 
 	return (
