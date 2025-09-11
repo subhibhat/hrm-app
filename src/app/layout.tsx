@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Geist, Geist_Mono, IBM_Plex_Sans_Thai, Poppins } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,6 +18,10 @@ const poppins = Poppins({
 	variable: "--font-poppins",
 });
 
+const ibmPlexSansThai = IBM_Plex_Sans_Thai({
+	weight: ["400", "500", "600", "700"]
+})
+
 export const metadata: Metadata = {
 	title: "Thammasat University - Human Resource Management",
 	description: "A comprehensive system for managing human resources at Thammasat University.",
@@ -30,7 +34,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${poppins.className} antialiased`}>
+			<body className={`${ibmPlexSansThai.className} antialiased`}>
 				{children}
 			</body>
 		</html>
