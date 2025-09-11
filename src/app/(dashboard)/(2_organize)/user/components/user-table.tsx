@@ -68,13 +68,13 @@ export default function UserTable() {
 									<path d="M3.3335 8.00002L6.66683 11.3334L13.3335 4.66669" stroke="white" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
 								</svg>
 							</div>
-							<span>Profile Name</span>
+							<span>ชื่อผู้ใช้</span>
 						</label>
 					</th>
-					<th className=" w-[194px] pb-3 items-center gap-3.5 font-medium "><div className=" flex ">Personnel ID</div></th>
-					<th className=" w-[193px] pb-3 items-center gap-3.5 font-medium "><div className=" flex ">Role</div></th>
-					<th className=" w-[330px] pb-3 items-center gap-3.5 font-medium "><div className=" flex ">Department</div></th>
-					<th className=" w-[125px] pb-3 items-center gap-3.5 font-medium "><div className=" flex ">Status</div></th>
+					<th className=" w-[194px] pb-3 items-center gap-3.5 font-medium "><div className=" flex ">รหัสบุคลากร</div></th>
+					<th className=" w-[193px] pb-3 items-center gap-3.5 font-medium "><div className=" flex ">บทบาท</div></th>
+					<th className=" w-[330px] pb-3 items-center gap-3.5 font-medium "><div className=" flex ">หน่วยงาน/ภาควิชา</div></th>
+					<th className=" w-[125px] pb-3 items-center gap-3.5 font-medium "><div className=" flex ">สถานะ</div></th>
 				</tr>
 			</thead>
 			<tbody>

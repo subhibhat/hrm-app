@@ -2,12 +2,12 @@ export default function LoginForm({ onSubmit }) {
 	return (
 		<form onSubmit={onSubmit} className=" flex w-full flex-col items-start gap-[38px] self-stretch ">
 			<div className=" flex flex-col items-start gap-3 self-stretch ">
-				<h1 className=" text-[var(--text-primary)] text-center text-[26px] font-medium not-italic ">Log in</h1>
-				<h2 className=" text-[var(--text-secondary)] ">Human Resource & Workload Management Platform.</h2>
+				<h1 className=" text-[var(--text-primary)] text-center text-[26px] font-medium not-italic ">เข้าสู่ระบบ</h1>
+				<h2 className=" text-[var(--text-secondary)] ">ระบบบริหารทรัพยากรบุคคลและภาระงาน</h2>
 			</div>
 			<div className=" flex w-full flex-col items-start gap-5 self-stretch ">
 				<label className=" flex flex-col items-start gap-2 self-stretch ">
-					<span>Email Address</span>
+					<span>อีเมล</span>
 					<div className=" flex h-[44px] py-0 px-3.5 items-center gap-2.5 self-stretch rounded-lg border-[1px] border-solid border-[var(--border)] ">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" viewBox="0 0 16 13" fill="none">
 							<path d="M0.5 4.0475V10.25C0.5 10.913 0.763392 11.5489 1.23223 12.0178C1.70107 12.4866 2.33696 12.75 3 12.75H13C13.663 12.75 14.2989 12.4866 14.7678 12.0178C15.2366 11.5489 15.5 10.913 15.5 10.25V2.75C15.5 2.08696 15.2366 1.45107 14.7678 0.982233C14.2989 0.513392 13.663 0.25 13 0.25H3C2.33696 0.25 1.70107 0.513392 1.23223 0.982233C0.763392 1.45107 0.5 2.08696 0.5 2.75V4.0475ZM3 1.5H13C13.3315 1.5 13.6495 1.6317 13.8839 1.86612C14.1183 2.10054 14.25 2.41848 14.25 2.75V3.675L8 7.04L1.75 3.675V2.75C1.75 2.41848 1.8817 2.10054 2.11612 1.86612C2.35054 1.6317 2.66848 1.5 3 1.5ZM1.75 5.095L7.70375 8.3C7.7948 8.34901 7.89659 8.37467 8 8.37467C8.10341 8.37467 8.2052 8.34901 8.29625 8.3L14.25 5.095V10.25C14.25 10.5815 14.1183 10.8995 13.8839 11.1339C13.6495 11.3683 13.3315 11.5 13 11.5H3C2.66848 11.5 2.35054 11.3683 2.11612 11.1339C1.8817 10.8995 1.75 10.5815 1.75 10.25V5.095Z" fill="#969696" />
@@ -16,7 +16,7 @@ export default function LoginForm({ onSubmit }) {
 					</div>
 				</label>
 				<label className=" flex flex-col items-start gap-2 self-stretch ">
-					<span>Password</span>
+					<span>รหัสผ่าน</span>
 					<div className=" flex h-[44px] py-0 px-3.5 items-center gap-2.5 self-stretch rounded-lg border-[1px] border-solid border-[var(--border)] ">
 						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
 							<path d="M11.25 11.75C11.25 12.0815 11.1183 12.3995 10.8839 12.6339C10.6495 12.8683 10.3315 13 10 13C9.66848 13 9.35054 12.8683 9.11612 12.6339C8.8817 12.3995 8.75 12.0815 8.75 11.75C8.75 11.4185 8.8817 11.1005 9.11612 10.8661C9.35054 10.6317 9.66848 10.5 10 10.5C10.3315 10.5 10.6495 10.6317 10.8839 10.8661C11.1183 11.1005 11.25 11.4185 11.25 11.75ZM6.25 5.5H5.625C4.7962 5.5 4.00134 5.82924 3.41529 6.41529C2.82924 7.00134 2.5 7.7962 2.5 8.625V14.875C2.5 15.7038 2.82924 16.4987 3.41529 17.0847C4.00134 17.6708 4.7962 18 5.625 18H14.375C15.2038 18 15.9987 17.6708 16.5847 17.0847C17.1708 16.4987 17.5 15.7038 17.5 14.875V8.625C17.5 7.7962 17.1708 7.00134 16.5847 6.41529C15.9987 5.82924 15.2038 5.5 14.375 5.5H13.75V4.875C13.75 3.88044 13.3549 2.92661 12.6517 2.22335C11.9484 1.52009 10.9946 1.125 10 1.125C9.00544 1.125 8.05161 1.52009 7.34835 2.22335C6.64509 2.92661 6.25 3.88044 6.25 4.875V5.5ZM7.5 4.875C7.5 4.21196 7.76339 3.57607 8.23223 3.10723C8.70107 2.63839 9.33696 2.375 10 2.375C10.663 2.375 11.2989 2.63839 11.7678 3.10723C12.2366 3.57607 12.5 4.21196 12.5 4.875V5.5H7.5V4.875ZM14.375 6.75C14.8723 6.75 15.3492 6.94754 15.7008 7.29917C16.0525 7.65081 16.25 8.12772 16.25 8.625V14.875C16.25 15.3723 16.0525 15.8492 15.7008 16.2008C15.3492 16.5525 14.8723 16.75 14.375 16.75H5.625C5.12772 16.75 4.65081 16.5525 4.29917 16.2008C3.94754 15.8492 3.75 15.3723 3.75 14.875V8.625C3.75 8.12772 3.94754 7.65081 4.29917 7.29917C4.65081 6.94754 5.12772 6.75 5.625 6.75H14.375Z" fill="#969696" />
@@ -35,12 +35,12 @@ export default function LoginForm({ onSubmit }) {
 								<path d="M3.3335 8.00002L6.66683 11.3334L13.3335 4.66669" stroke="white" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
 							</svg>
 						</div>
-						<span>Remember me</span>
+						<span>จำฉันไว้</span>
 					</label>
-					<div className=" cursor-pointer text-[var(--primary)] ">Forgot password?</div>
+					<div className=" cursor-pointer text-[var(--primary)] ">ลืมรหัสผ่าน?</div>
 				</div>
 			</div>
-			<button className=" flex w-full h-[44px] justify-center items-center gap-2.5 self-stretch rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)] ">Sign In</button>
+			<button className=" flex w-full h-[44px] justify-center items-center gap-2.5 self-stretch rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)] ">เข้าสู่ระบบ</button>
 		</form>
 	)
 }
