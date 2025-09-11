@@ -75,6 +75,7 @@ export default function UserTable() {
 					<th className=" w-[193px] pb-3 items-center gap-3.5 font-medium "><div className=" flex ">บทบาท</div></th>
 					<th className=" w-[330px] pb-3 items-center gap-3.5 font-medium "><div className=" flex ">หน่วยงาน/ภาควิชา</div></th>
 					<th className=" w-[125px] pb-3 items-center gap-3.5 font-medium "><div className=" flex ">สถานะ</div></th>
+					<th>&nbsp;</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -118,6 +119,17 @@ export default function UserTable() {
 							<td>
 								<div className=" flex h-[66px] py-3.5 px-0 items-center gap-3.5 ">
 									<p className=" text-[var(--text-primary)] text-sm not-italic font-normal leading-normal capitalize ">{user.status}</p>
+								</div>
+							</td>
+							<td>
+								<div className=" flex w-[67px] p-3.5 justify-end items-center gap-2.5 self-stretch ">
+									<button className=" flex w-[34px] h-[34px] justify-center items-center gap-[10.556px] shrink-0 aspect-square rounded-[6.333px] border border-solid border-[var(--border)] bg-[var(--input-default)] ">
+										<div className=" flex w-6 h-6 aspect-square ">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+												<path d="M7.5 12C7.5 12.3978 7.34196 12.7794 7.06066 13.0607C6.77936 13.342 6.39782 13.5 6 13.5C5.60218 13.5 5.22064 13.342 4.93934 13.0607C4.65804 12.7794 4.5 12.3978 4.5 12C4.5 11.6022 4.65804 11.2206 4.93934 10.9393C5.22064 10.658 5.60218 10.5 6 10.5C6.39782 10.5 6.77936 10.658 7.06066 10.9393C7.34196 11.2206 7.5 11.6022 7.5 12ZM13.5 12C13.5 12.3978 13.342 12.7794 13.0607 13.0607C12.7794 13.342 12.3978 13.5 12 13.5C11.6022 13.5 11.2206 13.342 10.9393 13.0607C10.658 12.7794 10.5 12.3978 10.5 12C10.5 11.6022 10.658 11.2206 10.9393 10.9393C11.2206 10.658 11.6022 10.5 12 10.5C12.3978 10.5 12.7794 10.658 13.0607 10.9393C13.342 11.2206 13.5 11.6022 13.5 12ZM18 13.5C18.3978 13.5 18.7794 13.342 19.0607 13.0607C19.342 12.7794 19.5 12.3978 19.5 12C19.5 11.6022 19.342 11.2206 19.0607 10.9393C18.7794 10.658 18.3978 10.5 18 10.5C17.6022 10.5 17.2206 10.658 16.9393 10.9393C16.658 11.2206 16.5 11.6022 16.5 12C16.5 12.3978 16.658 12.7794 16.9393 13.0607C17.2206 13.342 17.6022 13.5 18 13.5Z" fill="#969696" />
+											</svg>
+										</div>
+									</button>
 								</div>
 							</td>
 						</tr>

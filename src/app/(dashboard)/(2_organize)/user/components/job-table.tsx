@@ -19,23 +19,23 @@ export default function JobTable() {
 	const jobs: Job[] = [
 		{
 			id: 'JD-001',
-			name: 'Lecturer – Physical Therapy',
-			department: { id: '12345', name: 'Physical Therapy' },
-			key_responsibility: [{ name: 'Teaching' }, { name: 'Research' }, { name: 'Clinic' }],
+			name: 'อาจารย์ - กายภาพบำบัด',
+			department: { id: '12345', name: 'กายภาพบำบัด' },
+			key_responsibility: [{ name: 'งานสอน' }, { name: 'งานวิจัย' }, { name: 'คลินิก' }],
 			user: 'active'
 		},
 		{
 			id: 'JD-002',
-			name: 'Clinical Instructor – OT',
-			department: { id: '12345', name: 'Physical Therapy' },
-			key_responsibility: [{ name: 'Clinical training supervision' }],
+			name: 'อาจารย์ฝึกคลินิก – กิจกรรมบำบัด',
+			department: { id: '12345', name: 'กายภาพบำบัด' },
+			key_responsibility: [{ name: 'กำกับดูแลการฝึกภาคคลินิก' }],
 			user: 'active'
 		},
 		{
 			id: 'JD-003',
-			name: 'Lab Technician – Medical Tech',
-			department: { id: '12345', name: 'Physical Therapy' },
-			key_responsibility: [{ name: 'Laboratory' }],
+			name: 'เจ้าหน้าที่ห้องปฏิบัติการ – เทคนิคการแพทย์',
+			department: { id: '12345', name: 'กายภาพบำบัด' },
+			key_responsibility: [{ name: 'ห้องปฏิบัติการ' }],
 			user: 'active'
 		}
 	];
@@ -52,12 +52,12 @@ export default function JobTable() {
 									<path d="M3.3335 8.00002L6.66683 11.3334L13.3335 4.66669" stroke="white" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
 								</svg>
 							</div>
-							<span>Job Description</span>
+							<span>ชื่อตำแหน่งงาน</span>
 						</label>
 					</th>
-					<th className=" pb-3 items-center gap-3.5 font-medium "><div className=" flex ">Department</div></th>
-					<th className=" pb-3 items-center gap-3.5 font-medium "><div className=" flex ">KEY RESP.</div></th>
-					<th className=" w-[125px] pb-3 items-center gap-3.5 font-medium "><div className=" flex ">Status</div></th>
+					<th className=" pb-3 items-center gap-3.5 font-medium "><div className=" flex ">ภาควิชา / หน่วยงาน</div></th>
+					<th className=" pb-3 items-center gap-3.5 font-medium "><div className=" flex ">ความรับผิดชอบหลัก</div></th>
+					<th className=" w-[125px] pb-3 items-center gap-3.5 font-medium "><div className=" flex ">สถานะ</div></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -87,8 +87,10 @@ export default function JobTable() {
 								</div>
 							</td>
 							<td>
-								<div className=" flex h-[66px] py-3.5 px-0 items-center gap-3.5 ">
-									<p className=" text-[var(--text-primary)] text-sm not-italic font-normal leading-normal ">{job.key_responsibility.map(responsibility => responsibility.name).join(", ")}</p>
+								<div className=" flex h-[66px] py-3.5 px-0 items-center gap-1 ">
+									{job.key_responsibility.map(responsibility => (
+										<div className=" flex py-0.5 px-2 justify-center items-center gap-2.5 rounded-md border border-solid border-[var(--border)] bg-[var(--background-secondary)] text-xs not-italic font-medium leading-normal ">{responsibility.name}</div>
+										))}
 								</div>
 							</td>
 							<td>
