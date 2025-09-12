@@ -46,7 +46,7 @@ export default function ProfilePage() {
 				</div>
 			</div>
 
-			<div className=" flex py-[30px] flex-col justify-between items-start flex-[1_0_0] self-stretch bg-white ">
+			<div className=" flex py-[30px] flex-col justify-between items-start flex-[1_0_0] self-stretch bg-[var(--primary-foreground)] ">
 				<div className=" flex py-0 px-[30px] justify-between items-start self-stretch ">
 					<label className=" flex flex-col items-start gap-2 self-stretch ">
 						<div className=" flex w-[256px] h-[38px] py-0 px-3.5 items-center gap-2.5 rounded-lg border border-solid border-[var(--border)] bg-white ">
@@ -88,7 +88,7 @@ export default function ProfilePage() {
 					)}
 				</div>
 
-				<div className=" flex p-[30px] flex-col items-start gap-2.5 flex-[1_0_0] self-stretch bg-[var(--primary-foreground)] ">
+				<div className=" flex p-[30px] flex-col items-start gap-2.5 flex-[1_0_0] self-stretch ">
 					{currentTab === '' || currentTab === 'users' && <UserTable />}
 					{currentTab === 'positions' && <JobTable />}
 					{currentTab === 'roles' && <RoleTable />}

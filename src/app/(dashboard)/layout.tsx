@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<div className=" flex w-full min-h-screen ">
-			<div className=" flex flex-col w-[250px] min-h-screen p-4 gap-4 bg-[var(--sidebar-background)] ">
+			<div className=" flex flex-col w-[250px] min-h-screen p-4 gap-4 bg-[var(--sidebar-background) border-r-[0.5px] border-solid border-[var(--border)] ">
 				<div className=" flex h-[48px] flex-col items-center justify-center gap-2.5 self-stretch rounded-lg bg-[rgba(0,0,0,0.04)] ">
 					<strong>TU HRM</strong>
 				</div>
@@ -144,10 +144,10 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
 				</div>
 			</div>
 			<div className=" flex w-full flex-col min-h-screen ">
-				<div className=" flex h-[68px] w-full py-0 px-5 justify-between items-center self-stretch border-b-[0.5px] border-solid border-[var(--border)] bg-[var(--primary-foreground)] ">
-					<div className=" text-[var(--text-primary)] text-[22px] not-italic font-normal leading-[110%]  ">โปรไฟล์</div>
+				<div className=" flex h-[68px] w-full py-0 px-5 justify-between items-center self-stretch border-b-[0.5px] border-solid border-[var(--border)] bg-white ">
+					<div className=" text-[var(--text-primary)] text-[22px] not-italic font-normal leading-[110%] ">โปรไฟล์</div>
 					<div className=" flex items-center gap-6 ">
-						<div className=" flex  items-center gap-2.5">
+						<div className=" flex items-center gap-2.5">
 							<button className=" flex w-[38px] h-[38px] justify-center items-center gap-[10.556px] aspect-square rounded-md border border-solid border-[var(--border)] bg-[var(--input-default)] ">
 								<div className=" flex justify-center items-center h-[24px] w-[24px] shrink-0 ">
 									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
