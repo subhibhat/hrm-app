@@ -8,6 +8,6 @@ export default function Page() {
 	const [loading, setLoading] = useState(false)
 
 	return (
-		<ConfirmForm />
+		<SuccessDialog />
 	)
 }

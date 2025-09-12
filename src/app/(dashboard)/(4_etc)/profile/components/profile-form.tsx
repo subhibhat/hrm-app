@@ -1,7 +1,7 @@
 export default function ProfileForm() {
 	return (
 		<div className=" flex items-start gap-5 self-stretch ">
-			<div className=" flex max-w-[730px] p-5 flex-col items-start gap-[30px] rounded-lg border-[1px] border-solid border-[var(--border)] bg-[var(--primary-foreground)] ">
+			<div className=" flex max-w-[730px] p-5 flex-col items-start gap-[30px] rounded-lg border-[1px] border-solid border-[var(--border)] bg-white ">
 				<div className=" flex justify-between items-center self-stretch ">
 					<h1 className=" text-[var(--text-primary)] text-xl not-italic font-medium leading-normal ">
 						ข้อมูลส่วนบุคคล
@@ -122,7 +122,7 @@ export default function ProfileForm() {
 					</div>
 				</div>
 			</div>
-			<div className=" flex max-w-[380px] p-5 flex-col items-start gap-[30px] flex-[1_0_0] rounded-lg border-[1px] border-solid border-[var(--border)] bg-[var(--primary-foreground)] ">
+			<div className=" flex max-w-[380px] p-5 flex-col items-start gap-[30px] flex-[1_0_0] rounded-lg border-[1px] border-solid border-[var(--border)] bg-white ">
 				<div className=" flex justify-between items-center self-stretch ">
 					<h1 className=" text-[var(--text-primary)] text-xl not-italic font-medium leading-normal ">
 						ข้อมูลติดต่อ
