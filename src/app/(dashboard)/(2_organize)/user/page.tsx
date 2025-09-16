@@ -89,9 +89,11 @@ export default function ProfilePage() {
 				</div>
 
 				<div className=" flex p-[30px] flex-col items-start gap-2.5 flex-[1_0_0] self-stretch ">
-					{currentTab === '' || currentTab === 'users' && <UserTable />}
-					{currentTab === 'positions' && <JobTable />}
-					{currentTab === 'roles' && <RoleTable />}
+					<div className="  flex w-full p-5 flex-col items-start gap-[30px] rounded-lg border-[1px] border-solid border-[var(--border)] bg-white ">
+						{currentTab === '' || currentTab === 'users' && <UserTable />}
+						{currentTab === 'positions' && <JobTable />}
+						{currentTab === 'roles' && <RoleTable />}
+					</div>
 				</div>
 
 				<div className=" flex px-[30px] py-0 justify-between items-center self-stretch ">
