@@ -69,7 +69,7 @@ export default function ProfilePage() {
 					</div>
 				</div>
 			</div>
-			<div className=" flex p-[30px] flex-col items-start gap-2.5 flex-[1_0_0] self-stretch bg-white  ">
+			<div className=" flex p-[30px] flex-col items-start gap-2.5 flex-[1_0_0] self-stretch bg-[var(--primary-foreground)] ">
 				{currentTab === '' || currentTab === 'profile' && <ProfileForm />}
 				{currentTab === 'edu-histories' && <EduHistories />}
 				{currentTab === 'job-histories' && <JobHistories />}

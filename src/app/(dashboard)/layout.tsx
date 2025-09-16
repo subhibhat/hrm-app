@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<div className=" flex w-full min-h-screen ">
-			<div className=" flex flex-col w-[250px] min-h-screen p-4 gap-4 bg-[var(--sidebar-background) border-r-[0.5px] border-solid border-[var(--border)] ">
+			<div className=" flex flex-col w-[250px] min-h-screen p-4 gap-4 bg-[var(--sidebar-background)] border-r-[0.5px] border-solid border-[var(--border)] ">
 				<div className=" flex h-[48px] flex-col items-center justify-center gap-2.5 self-stretch rounded-lg bg-[rgba(0,0,0,0.04)] ">
 					<strong>TU HRM</strong>
 				</div>
