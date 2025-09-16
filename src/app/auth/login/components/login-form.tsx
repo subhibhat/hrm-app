@@ -1,4 +1,8 @@
-export default function LoginForm({ onSubmit }) {
+type LoginForm = {
+	onSubmit: () => {}
+}
+
+export default function LoginForm({ onSubmit }: LoginForm) {
 	return (
 		<form onSubmit={onSubmit} className=" flex w-full flex-col items-start gap-[38px] self-stretch ">
 			<div className=" flex flex-col items-start gap-3 self-stretch ">

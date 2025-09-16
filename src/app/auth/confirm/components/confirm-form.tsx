@@ -1,4 +1,10 @@
-export default function ConfirmForm() {
+import React from "react";
+
+type ConfirmFormProps = {
+	setConfirm: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function ConfirmForm({ setConfirm }: ConfirmFormProps) {
 	return (
 		<form className=" flex w-full flex-col items-start gap-[38px] self-stretch ">
 			<div className=" flex flex-col items-start gap-3 self-stretch ">
@@ -56,7 +62,7 @@ export default function ConfirmForm() {
 					</label>
 				</div>
 			</div>
-			<button className=" flex w-full h-[44px] justify-center items-center gap-2.5 self-stretch rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)] ">ยืนยันและดำเนินการต่อ</button>
+			<button onClick={() => setConfirm(true)} className=" flex w-full h-[44px] justify-center items-center gap-2.5 self-stretch rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)] ">ยืนยันและดำเนินการต่อ</button>
 		</form>
 	)
 }
