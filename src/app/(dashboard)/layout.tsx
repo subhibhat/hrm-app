@@ -163,8 +163,8 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
 								</div>
 							</button>
 						</div>
-						<div className=" w-[1px] h-9 bg-[var(--background)] ">&nbsp;</div>
-						<div className=" w-[38px] h-[38px] aspect-square rounded-[38px] bg-[var(--background)] "></div>
+						<div className=" w-[1px] h-9 bg-[var(--border)] ">&nbsp;</div>
+						<div className=" w-[38px] h-[38px] aspect-square rounded-[38px] bg-gray-700 "></div>
 					</div>
 				</div>
 				{children}
