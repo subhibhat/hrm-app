@@ -10,7 +10,7 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
 
 				<div className=" flex flex-col items-start gap-4 self-stretch ">
 					<div className=" flex flex-col justify-center items-center gap-2.5 self-stretch ">
-						<div className=" flex w-full py-0 px-3 text-[var(--text-secondary)] text-[14px] not-italic font-normal leading-normal ">Main Menu</div>
+						<div className=" flex w-full py-0 px-3 text-[var(--text-secondary)] text-[14px] not-italic font-normal leading-normal ">เมนูหลัก</div>
 						<div className=" flex flex-col items-start self-stretch">
 							<Link href="/dashboard" className=" flex w-full h-9 py-0 px-2.5 justify-center items-center gap-2.5 self-stretch hover:bg-[var(--hover)] hover:rounded-lg hover:cursor-pointer ">
 								<div className=" w-[22px] h-[22px] ">
@@ -42,7 +42,7 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
 					<div className=" w-[218px] h-[1px] bg-[var(--border)] ">&nbsp;</div>
 
 					<div className=" flex flex-col justify-center items-center gap-2.5 self-stretch ">
-						<div className=" flex w-full py-0 px-3 text-[var(--text-secondary)] text-[14px] not-italic font-normal leading-normal ">Organize</div>
+						<div className=" flex w-full py-0 px-3 text-[var(--text-secondary)] text-[14px] not-italic font-normal leading-normal ">องค์กร</div>
 						<div className=" flex flex-col items-start self-stretch">
 							<Link href="/department" className=" flex w-full h-9 py-0 px-2.5 justify-center items-center gap-2.5 self-stretch hover:bg-[var(--hover)] hover:rounded-lg hover:cursor-pointer ">
 								<div className=" w-[22px] h-[22px] ">
@@ -74,7 +74,7 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
 					<div className=" w-[218px] h-[1px] bg-[var(--border)] ">&nbsp;</div>
 
 					<div className=" flex flex-col justify-center items-center gap-2.5 self-stretch ">
-						<div className=" flex w-full py-0 px-3 text-[var(--text-secondary)] text-[14px] not-italic font-normal leading-normal ">Workload</div>
+						<div className=" flex w-full py-0 px-3 text-[var(--text-secondary)] text-[14px] not-italic font-normal leading-normal ">ภาระงาน</div>
 						<div className=" flex flex-col items-start self-stretch">
 							<Link href="/setup" className=" flex w-full h-9 py-0 px-2.5 justify-center items-center gap-2.5 self-stretch hover:bg-[var(--hover)] hover:rounded-lg hover:cursor-pointer ">
 								<div className=" w-[22px] h-[22px] ">
