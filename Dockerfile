@@ -18,7 +18,7 @@ WORKDIR /app
 
 # Install only production dependencies
 COPY package.json ./
-RUN npm ci --only=production --prefer-offline --no-audit --progress=false
+RUN npm install --production --prefer-offline --no-audit --progress=false
 
 # Copy built assets from builder
 COPY --from=builder /app/.next ./.next
