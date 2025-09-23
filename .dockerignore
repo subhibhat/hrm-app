@@ -1,0 +1,36 @@
+# Ignore node_modules and build output
+node_modules
+.next
+out
+
+# Ignore log files
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Ignore environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# Ignore OS and editor files
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Ignore test coverage
+coverage
+
+# Ignore other temp files
+*.tgz
+
+# Ignore public/static assets that shouldn't be in the image (optional)
+public/*.psd
+public/*.ai
+public/*.sketch
