@@ -1,37 +1,43 @@
-# --- Stage 1: Install dependencies and build ---
-FROM node:20-alpine AS builder
+FROM oven/bun:alpine AS deps
+RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-# Install dependencies
-COPY package.json package-lock.json* yarn.lock* pnpm-lock.yaml* ./
-RUN npm ci --prefer-offline --no-audit --progress=false
+COPY package.json package-lock.json* ./
+RUN BUN_INSTALL_DEV=false bun install --no-scripts && \
+    bun pm cache clean
 
-# Copy source code
+FROM oven/bun:alpine AS builder
+WORKDIR /app
+
+ARG NEXT_PUBLIC_API_URL
+
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Build Next.js app
-RUN npm run build
+RUN bun install --no-scripts --frozen-lockfile
 
-# --- Stage 2: Production image ---
-FROM node:20-alpine AS runner
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+RUN bun run build
+
+FROM oven/bun:alpine AS runner
 WORKDIR /app
 
-# Install only production dependencies
-COPY package.json ./
-RUN npm install --production --prefer-offline --no-audit --progress=false
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 nextjs
 
-# Copy built assets from builder
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public;
-COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/next.config.js* ./
-COPY --from=builder /app/next.config.ts* ./
-COPY --from=builder /app/next-env.d.ts* ./
-COPY --from=builder /app/tsconfig.json* ./
-COPY --from=builder /app/src ./src
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
 
-# Expose port (default Next.js port)
+# Copy only necessary files for standalone
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+
+RUN chown -R nextjs:nodejs /app
+
+USER nextjs
+
 EXPOSE 3000
 
-# Start Next.js app
-CMD ["npm", "start"]
+CMD ["bun", "server.js"]
