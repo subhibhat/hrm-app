@@ -4,7 +4,7 @@ type LoginForm = {
 
 export default function LoginForm({ onSubmit }: LoginForm) {
 	return (
-		<form onSubmit={onSubmit} className=" flex w-full flex-col items-start gap-[38px] self-stretch ">
+		<form onSubmit={onSubmit} className=" flex w-[427px] p-[30px] flex-col items-start gap-[38px] self-stretch ">
 			<div className=" flex flex-col items-start gap-3 self-stretch ">
 				<h1 className=" text-[var(--text-primary)] text-center text-[26px] font-medium not-italic ">เข้าสู่ระบบ</h1>
 				<h2 className=" text-[var(--text-secondary)] ">ระบบบริหารทรัพยากรบุคคลและภาระงาน</h2>
