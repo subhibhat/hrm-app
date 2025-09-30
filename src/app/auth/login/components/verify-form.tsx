@@ -7,7 +7,7 @@ type VerifyForm = {
 
 export default function VerifyForm({ onSubmit, setShowMfa }: VerifyForm) {
 	return (
-		<form onSubmit={onSubmit} className=" flex w-full flex-col items-start gap-[38px] self-stretch ">
+		<form onSubmit={onSubmit} className=" flex w-[427px] p-[30px] flex-col items-start gap-[38px] self-stretch ">
 			<div className=" flex flex-col items-start gap-3 self-stretch ">
 				<h1 className=" text-[var(--text-primary)] text-center text-[26px] font-medium not-italic ">ยืนยันตัวตน</h1>
 				<h2 className=" text-[var(--text-secondary)] ">เราได้ส่งรหัส 6 หลักไปที่อีเมล example@mail.com กรุณากรอกรหัสภายใน 60 นาที</h2>

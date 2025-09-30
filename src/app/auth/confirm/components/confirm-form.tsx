@@ -6,7 +6,7 @@ type ConfirmFormProps = {
 
 export default function ConfirmForm({ setConfirm }: ConfirmFormProps) {
 	return (
-		<form className=" flex w-full flex-col items-start gap-[38px] self-stretch ">
+		<form className=" flex w-[427px] p-[30px] flex-col items-start gap-[38px] self-stretch ">
 			<div className=" flex flex-col items-start gap-3 self-stretch ">
 				<h1 className=" text-[var(--text-primary)] text-center text-[26px] font-medium not-italic ">ยืนยันข้อมูลของคุณ</h1>
 				<h2 className=" text-[var(--text-secondary)] ">กรุณาตรวจสอบและยืนยันข้อมูลก่อนดำเนินการต่อ</h2>
