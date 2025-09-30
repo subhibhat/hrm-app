@@ -27,11 +27,7 @@ export const metadata: Metadata = {
 	description: "A comprehensive system for managing human resources at Thammasat University.",
 };
 
-export default function RootLayout({
-	children,
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{children: React.ReactNode}>) {
 	return (
 		<html lang="en">
 			<body className={`${ibmPlexSansThai.className} antialiased`}>

@@ -6,7 +6,7 @@
 
 :root {
 	--primary-foreground: oklch(0.985 0.002 247.839);
-	--primary: oklch(0.21 0.034 264.665);
+	--primary: #4E67D5; /* oklch(0.21 0.034 264.665); */
 	--border: oklch(0.928 0.006 264.531);
 	--radius: 0.625rem;
 	--background: oklch(1 0 0);
