@@ -17,7 +17,7 @@ export default function NavLink({ href, children }: NavLink) {
     const isActive = link === href?.replace('/', '')
 
     return (
-        <Link href={`${href}`} className={` flex w-full h-9 py-0 px-2.5 justify-center items-center gap-2.5 self-stretch rounded-[8px] not-italic font-medium leading-normal ${isActive ? ' text-white bg-[var(--primary)] hover:bg-[var(--hover)] hover:rounded-lg hover:cursor-pointer ' : ' hover:bg-[var(--hover)] hover:rounded-lg hover:cursor-pointer '} `}>
+        <Link href={`${href}`} className={` flex w-full h-9 py-0 px-2.5 justify-center items-center gap-2.5 self-stretch rounded-[8px] not-italic font-medium leading-normal ${isActive && ' text-white bg-[var(--primary)] '} `}>
             { children }
         </Link>
     )
