@@ -1,0 +1,17 @@
+{
+  "main_menu": "เมนูหลัก",
+  "dashboard": "แดชบอร์ด",
+  "report": "รายงาน",
+  "audit-log": "บันทึกกิจกรรม",
+  "organization": "องค์กร",
+  "department": "ภาควิชา",
+  "group": "กลุ่มงาน",
+  "user": "ผู้ใช้งาน",
+  "workload": "ภาระงาน",
+  "workload-settings": "ตั้งค่าภาระงาน",
+  "my-workload": "ภาระงานของฉัน",
+  "approval": "การอนุมัติ",
+  "notifications": "การแจ้งเตือน",
+  "profile": "โปรไฟล์ของฉัน",
+  "settings": "การตั้งค่า"
+}

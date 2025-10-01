@@ -1,0 +1,17 @@
+{
+  "main_menu": "Main Menu",
+  "dashboard": "Dashboard",
+  "report": "Report",
+  "audit-log": "Activity Log",
+  "organization": "Organization",
+  "department": "Department",
+  "group": "Group",
+  "user": "User",
+  "workload": "Workload",
+  "workload-settings": "Workload Settings",
+  "my-workload": "My Workload",
+  "approval": "Approval",
+  "notifications": "Notifications",
+  "profile": "My Profile",
+  "settings": "Settings"
+}
