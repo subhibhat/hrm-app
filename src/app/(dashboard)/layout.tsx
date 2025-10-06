@@ -3,12 +3,38 @@
 import NavLink from "@/components/nav-link";
 import { useTranslation } from "react-i18next";
 import '../../i18n';
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
 	
 	const { t } = useTranslation()
-	const path = usePathname().split('/').filter(Boolean).pop()?.toString()
+	const pathname = usePathname()
+	const router = useRouter()
+
+	const [isLoad, setIsLoad] = useState<boolean>(false);
+	const [isAuth, setIsAuth] = useState<boolean>(false);
+
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			const isAuth = localStorage.getItem('is_login');
+			setIsAuth(Boolean(isAuth));
+
+			if (!isAuth) {
+				router.replace('/auth/login')
+			}
+		}
+
+		setIsLoad(false);
+	}, [router, pathname]);
+
+	if (isLoad) {
+		return <div>Loading & Verifying access...</div>;
+	}
+
+	if (!isAuth && !pathname.startsWith('/auth')) {
+		return null;
+	}
 
 	return (
 		<div className=" flex w-full min-h-screen ">
@@ -164,7 +190,7 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
 			</div>
 			<div className=" flex w-full flex-col min-h-screen ">
 				<div className=" flex h-[68px] w-full py-0 px-5 justify-between items-center self-stretch border-b-[0.5px] border-solid border-[var(--border)] bg-white ">
-					<div className=" text-[var(--text-primary)] text-[22px] not-italic font-normal leading-[110%] ">{t(path)}</div>
+					<div className=" text-[var(--text-primary)] text-[22px] not-italic font-normal leading-[110%] ">{t(`${pathname.split('/').filter(Boolean).pop()?.toString()}`)}</div>
 					<div className=" flex items-center gap-6 ">
 						<div className=" flex items-center gap-2.5">
 							<button className=" flex w-[38px] h-[38px] justify-center items-center gap-[10.556px] aspect-square rounded-md border border-solid border-[var(--border)] bg-[var(--input-default)] ">

@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
 
-let accessToken: string | null = localStorage.getItem("access_token");
+let accessToken: string | null = null;
 let isRefreshing = false;
 let refreshSubscribers: ((token: string) => void)[] = [];
 
@@ -18,7 +18,11 @@ const onRefreshed = (newToken: string) => {
 const api = axios.create({
 	baseURL: API_BASE_URL,
 	timeout: Number(process.env.NEXT_PUBLIC_API_TIMEOUT) || 10000,
-	withCredentials: true,
+	withCredentials: false,
+	headers: {
+		'Accept': 'application/json',
+		'Content-Type': 'application/json',
+	}
 });
 
 api.interceptors.request.use(
