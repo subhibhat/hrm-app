@@ -1,3 +1,4 @@
+import Departmemt from "./components/departmemt"
 export default function DepartmentPage() {
 	return (
 		<>
@@ -6,6 +7,7 @@ export default function DepartmentPage() {
 					<div className=" flex flex-col items-start gap-2.5 ">
 						<h1 className=" text-[var(--text-primary)] text-[26px] not-italic font-medium leading-[110%] tracking-[-0.52px] ">{ /* User Management */ }</h1>
 						<h2 className=" text-[var(--text-secondary)] text-sm not-italic font-normal leading-normal ">{ /* Manage system users, assign roles, and define job descriptions in one place. */ }</h2>
+					<Departmemt/>
 					</div>
 				</div>
 				{/* <div className=" flex items-start gap-5 self-stretch ">
