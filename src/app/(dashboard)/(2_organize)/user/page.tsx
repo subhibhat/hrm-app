@@ -33,7 +33,7 @@ export default function ProfilePage() {
 							<div  className="justify-start text-[#47474F] text-[14px] font-normal font-['IBM_Plex_Sans_Thai'] leading-none">ผู้ใช้ที่ใช้งานได้</div>
 							<div className="flex gap-1 text-[#0E121A] font-normal ">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-									<path d="M9.99984 1.66663V3.33329M14.1665 2.78329L13.3332 4.22663M17.2165 5.83329L15.7732 6.66663M18.3332 9.99996H16.6665M17.2165 14.1666L15.7732 13.3333M14.1665 17.2166L13.3332 15.7733M9.99984 18.3333V16.6666M5.83317 17.2166L6.6665 15.7733M2.78317 14.1666L4.2265 13.3333M1.6665 9.99996H3.33317M2.78317 5.83329L4.2265 6.66663M5.83317 2.78329L6.6665 4.22663" stroke="#08CB00" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M9.99984 1.66663V3.33329M14.1665 2.78329L13.3332 4.22663M17.2165 5.83329L15.7732 6.66663M18.3332 9.99996H16.6665M17.2165 14.1666L15.7732 13.3333M14.1665 17.2166L13.3332 15.7733M9.99984 18.3333V16.6666M5.83317 17.2166L6.6665 15.7733M2.78317 14.1666L4.2265 13.3333M1.6665 9.99996H3.33317M2.78317 5.83329L4.2265 6.66663M5.83317 2.78329L6.6665 4.22663" stroke="#08CB00" />
 								</svg>
 								<div className="flex gap-1 text-[#0E121A] font-normal ">
 									<div>95 </div>
@@ -45,7 +45,7 @@ export default function ProfilePage() {
 							<div  className="justify-start text-[#47474F] text-[14px] font-normal font-['IBM_Plex_Sans_Thai'] leading-none">คำเชิญที่รอดำเนินการ</div>
 							<div className="flex gap-1 text-[#0E121A] font-normal ">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-									<path d="M9.99984 1.66663V3.33329M14.1665 2.78329L13.3332 4.22663M17.2165 5.83329L15.7732 6.66663M18.3332 9.99996H16.6665M17.2165 14.1666L15.7732 13.3333M14.1665 17.2166L13.3332 15.7733M9.99984 18.3333V16.6666M5.83317 17.2166L6.6665 15.7733M2.78317 14.1666L4.2265 13.3333M1.6665 9.99996H3.33317M2.78317 5.83329L4.2265 6.66663M5.83317 2.78329L6.6665 4.22663" stroke="#FFD93D" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M9.99984 1.66663V3.33329M14.1665 2.78329L13.3332 4.22663M17.2165 5.83329L15.7732 6.66663M18.3332 9.99996H16.6665M17.2165 14.1666L15.7732 13.3333M14.1665 17.2166L13.3332 15.7733M9.99984 18.3333V16.6666M5.83317 17.2166L6.6665 15.7733M2.78317 14.1666L4.2265 13.3333M1.6665 9.99996H3.33317M2.78317 5.83329L4.2265 6.66663M5.83317 2.78329L6.6665 4.22663" stroke="#FFD93D" />
 								</svg>
 								<div className="flex gap-1 text-[#0E121A] font-normal">
 									<div>10 </div>
@@ -57,7 +57,7 @@ export default function ProfilePage() {
 							<div  className="justify-start text-[#47474F] text-[14px] font-normal font-['IBM_Plex_Sans_Thai'] leading-none">ผู้ใช้ที่ถูกระงับการใช้งาน</div>
 							<div className="flex gap-1 text-[#0E121A] font-normal ">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-									<path d="M9.99984 1.66663V3.33329M14.1665 2.78329L13.3332 4.22663M17.2165 5.83329L15.7732 6.66663M18.3332 9.99996H16.6665M17.2165 14.1666L15.7732 13.3333M14.1665 17.2166L13.3332 15.7733M9.99984 18.3333V16.6666M5.83317 17.2166L6.6665 15.7733M2.78317 14.1666L4.2265 13.3333M1.6665 9.99996H3.33317M2.78317 5.83329L4.2265 6.66663M5.83317 2.78329L6.6665 4.22663" stroke="#E4004B" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M9.99984 1.66663V3.33329M14.1665 2.78329L13.3332 4.22663M17.2165 5.83329L15.7732 6.66663M18.3332 9.99996H16.6665M17.2165 14.1666L15.7732 13.3333M14.1665 17.2166L13.3332 15.7733M9.99984 18.3333V16.6666M5.83317 17.2166L6.6665 15.7733M2.78317 14.1666L4.2265 13.3333M1.6665 9.99996H3.33317M2.78317 5.83329L4.2265 6.66663M5.83317 2.78329L6.6665 4.22663" stroke="#E4004B" />
 								</svg>
 								<div className="flex gap-1 text-[#0E121A] font-normal">
 									<div>15 </div>
@@ -69,7 +69,7 @@ export default function ProfilePage() {
 							<div  className="justify-start text-[#47474F] text-[14px] font-normal font-['IBM_Plex_Sans_Thai'] leading-none">ผู้ใช้ที่ยังไม่ได้กำหนดสิทธิ์</div>
 							<div className="flex gap-1 text-[#0E121A] font-normal ">
 								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-									<path d="M10.0003 1.66663V3.33329M14.167 2.78329L13.3337 4.22663M17.217 5.83329L15.7737 6.66663M18.3337 9.99996H16.667M17.217 14.1666L15.7737 13.3333M14.167 17.2166L13.3337 15.7733M10.0003 18.3333V16.6666M5.83366 17.2166L6.66699 15.7733M2.78366 14.1666L4.22699 13.3333M1.66699 9.99996H3.33366M2.78366 5.83329L4.22699 6.66663M5.83366 2.78329L6.66699 4.22663" stroke="#6B16B2" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M10.0003 1.66663V3.33329M14.167 2.78329L13.3337 4.22663M17.217 5.83329L15.7737 6.66663M18.3337 9.99996H16.667M17.217 14.1666L15.7737 13.3333M14.167 17.2166L13.3337 15.7733M10.0003 18.3333V16.6666M5.83366 17.2166L6.66699 15.7733M2.78366 14.1666L4.22699 13.3333M1.66699 9.99996H3.33366M2.78366 5.83329L4.22699 6.66663M5.83366 2.78329L6.66699 4.22663" stroke="#6B16B2" />
 								</svg>
 								<div className="flex gap-1 text-[#0E121A] font-normal">
 									<div>10 </div>
@@ -108,8 +108,8 @@ export default function ProfilePage() {
 			</div>
 
 			<div className=" flex flex-col justify-between items-start flex-[1_0_0] self-stretch bg-[var(--primary-foreground)] ">
-				<div className=" flex p-[30px] flex-col items-start gap-2.5 flex-[1_0_0] self-stretch ">
-					<div className=" flex w-full p-5 flex-col items-start gap-[30px] rounded-lg border-[1px] border-solid border-[var(--border)] bg-white ">
+				<div className=" flex  flex-col items-start gap-2.5 flex-[1_0_0] self-stretch ">
+					<div className=" flex w-full p-5 flex-col items-start gap-[30px] border-[1px] border-solid border-[var(--border)] bg-white ">
 
 						{currentTab === '' || currentTab === 'users' && <UserTable />}
 						{currentTab === 'positions' && <JobTable />}

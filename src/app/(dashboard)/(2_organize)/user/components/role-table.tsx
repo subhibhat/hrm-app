@@ -1,139 +1,159 @@
-interface Department {
-	id: string;
-	name: string;
+'use client';
+import { useMemo, useState } from 'react';
+
+type Status = 'ใช้งานอยู่' | 'ปิดใช้งาน';
+
+interface RoleRow {
+  id: string;
+  roleName: string;          // ชื่อบทบาท
+  color: string;             // hex สี (ช่องสี่เหลี่ยม)
+  userCount: number;         // จำนวนผู้ใช้
+  unusedLicenses: number;    // จำนวนสิทธิ์ที่ใช้ได้
+  status: Status;
 }
 
-interface KeyResponsibility {
-	name: string;
-}
-
-interface Role {
-	id: string;
-	name: string;
-	department: Department;
-	key_responsibility: KeyResponsibility[];
-	user: string;
-}
+type SortKey = 'roleName' | 'color' | 'userCount' | 'unusedLicenses' | 'status';
+type SortDir = 'asc' | 'desc';
 
 export default function RoleTable() {
-	const roles: Role[] = [
-		{
-			id: 'JD-001',
-			name: 'ผู้แลระบบ',
-			department: { id: '12345', name: 'Physical Therapy' },
-			key_responsibility: [{ name: 'Teaching' }, { name: 'Research' }, { name: 'Clinic' }],
-			user: 'ใช้งาน'
-		},
-		{
-			id: 'JD-002',
-			name: 'อาจารย์',
-			department: { id: '12345', name: 'Physical Therapy' },
-			key_responsibility: [{ name: 'Clinical training supervision' }],
-			user: 'ใช้งาน'
-		},
-		{
-			id: 'JD-003',
-			name: 'ผู้บริหาร',
-			department: { id: '12345', name: 'Physical Therapy' },
-			key_responsibility: [{ name: 'Laboratory' }],
-			user: 'ใช้งาน'
-		},
-		{
-			id: 'JD-004',
-			name: 'พนักงานทั่วไป',
-			department: { id: '12345', name: 'Physical Therapy' },
-			key_responsibility: [{ name: 'Laboratory' }],
-			user: 'ใช้งาน'
-		},
-		{
-			id: 'JD-005',
-			name: 'พนักงานฝ่ายบุคคล',
-			department: { id: '12345', name: 'Physical Therapy' },
-			key_responsibility: [{ name: 'Laboratory' }],
-			user: 'ใช้งาน'
-		}
-	];
+  // --- ตัวอย่างข้อมูลให้เหมือนภาพ ---
+  const rows: RoleRow[] = [
+    { id: 'r1', roleName: 'ผู้ดูแลระบบ (Admin)',     color: '#6F2AFF', userCount: 5,  unusedLicenses: 10, status: 'ใช้งานอยู่' },
+    { id: 'r2', roleName: 'อาจารย์ (Lecturer)',       color: '#2F66FF', userCount: 95, unusedLicenses: 4,  status: 'ใช้งานอยู่' },
+    { id: 'r3', roleName: 'ผู้บริหาร (Executive)',   color: '#E0772F', userCount: 20, unusedLicenses: 6,  status: 'ใช้งานอยู่' },
+  ];
 
-	return (
-		<>
-			<div className=" flex py-0 justify-between items-start self-stretch ">
-				<label className=" flex flex-col items-start gap-2 self-stretch ">
-					<div className=" flex w-[256px] h-[38px] py-0 px-3.5 items-center gap-2.5 rounded-lg border border-solid border-[var(--border)] bg-white ">
-						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-							<path d="M12.5253 13.4087C11.1658 14.5409 9.42211 15.1053 7.65702 14.9846C5.89192 14.8639 4.2413 14.0674 3.04849 12.7608C1.85567 11.4541 1.2125 9.73794 1.25276 7.96918C1.29301 6.20043 2.0136 4.51528 3.26462 3.26425C4.51564 2.01323 6.20079 1.29265 7.96955 1.25239C9.73831 1.21214 11.4545 1.85531 12.7611 3.04812C14.0678 4.24093 14.8643 5.89156 14.985 7.65665C15.1056 9.42174 14.5412 11.1654 13.4091 12.525L17.3178 16.4325C17.4352 16.5498 17.5011 16.709 17.5011 16.875C17.5011 17.0409 17.4352 17.2001 17.3178 17.3175C17.2005 17.4348 17.0413 17.5008 16.8753 17.5008C16.7094 17.5008 16.5502 17.4348 16.4328 17.3175L12.5253 13.4087ZM13.7503 8.12497C13.7503 7.38629 13.6048 6.65483 13.3222 5.97238C13.0395 5.28992 12.6251 4.66983 12.1028 4.1475C11.5805 3.62517 10.9604 3.21083 10.2779 2.92815C9.59548 2.64547 8.86402 2.49997 8.12534 2.49997C7.38665 2.49997 6.6552 2.64547 5.97274 2.92815C5.29029 3.21083 4.67019 3.62517 4.14786 4.1475C3.62553 4.66983 3.2112 5.28992 2.92852 5.97238C2.64583 6.65483 2.50034 7.38629 2.50034 8.12497C2.50034 9.61682 3.09297 11.0476 4.14786 12.1024C5.20276 13.1573 6.6335 13.75 8.12534 13.75C9.61718 13.75 11.0479 13.1573 12.1028 12.1024C13.1577 11.0476 13.7503 9.61682 13.7503 8.12497Z" fill="#1F1F1F" />
-						</svg>
-						<input type="text" placeholder="ค้นหาชื่อ, อีเมล, หรือรหัสบุคลากร" className=" text-sm flex w-full h-full px-0 py-3.5 items-center gap-2.5 self-stretch focus:outline-none " />
-					</div>
-				</label>
-				<button className=" flex h-[38px] pl-2.5 pr-3.5 py-0 justify-center items-center gap-2.5 rounded-lg border border-solid border-[var(--border)] ">
-					<div className=" h-4 w-4 ">
-						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-							<path d="M8 2C8.13261 2 8.25979 2.05268 8.35355 2.14645C8.44732 2.24021 8.5 2.36739 8.5 2.5V7.5H13.5C13.6326 7.5 13.7598 7.55268 13.8536 7.64645C13.9473 7.74021 14 7.86739 14 8C14 8.13261 13.9473 8.25979 13.8536 8.35355C13.7598 8.44732 13.6326 8.5 13.5 8.5H8.5V13.5C8.5 13.6326 8.44732 13.7598 8.35355 13.8536C8.25979 13.9473 8.13261 14 8 14C7.86739 14 7.74021 13.9473 7.64645 13.8536C7.55268 13.7598 7.5 13.6326 7.5 13.5V8.5H2.5C2.36739 8.5 2.24021 8.44732 2.14645 8.35355C2.05268 8.25979 2 8.13261 2 8C2 7.86739 2.05268 7.74021 2.14645 7.64645C2.24021 7.55268 2.36739 7.5 2.5 7.5H7.5V2.5C7.5 2.36739 7.55268 2.24021 7.64645 2.14645C7.74021 2.05268 7.86739 2 8 2Z" fill="#1F1F1F" />
-						</svg>
-					</div>
-					<div className=" text-center text-sm not-italic font-medium leading-[110%] ">เพิ่มบทบาท</div>
-				</button>
-			</div>
-			<table className=" w-full border-0 ">
-				<thead>
-					<tr className=" text-[var(--text-secondary)] text-xs not-italic font-medium leading-normal uppercase border-b-[1px] border-solid border-[var(--border)] ">
-						<th className=" w-[363px] pb-3 items-center gap-3.5 font-medium ">
-							<label className=" flex items-center gap-2.5 flex-[1_0_0] text-[var(--text-secondary)] ">
-								<input className=" hidden peer " type="checkbox" />
-								<div className=" w-[18px] h-[18px] aspect-square flex items-center justify-center appearance-none rounded-md border-[1px] border-solid border-[var(--border)] peer-checked:bg-[var(--primary)] peer-checked:border-[var(--primary)] ">
-									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-										<path d="M3.3335 8.00002L6.66683 11.3334L13.3335 4.66669" stroke="white" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
-									</svg>
-								</div>
-								<span>ชื่อตำแหน่งงาน</span>
-							</label>
-						</th>
-						<th className=" pb-3 items-center gap-3.5 font-medium "><div className=" flex ">ภาควิชา / หน่วยงาน</div></th>
-						<th className=" pb-3 items-center gap-3.5 font-medium "><div className=" flex ">ความรับผิดชอบหลัก</div></th>
-						<th className=" w-[125px] pb-3 items-center gap-3.5 font-medium "><div className=" flex ">สถานะ</div></th>
-					</tr>
-				</thead>
-				<tbody>
-					{
-						roles.map((role, index) => (
-							<tr className=" border-b-[1px] border-solid border-[var(--border)] " key={role.id}>
-								<td>
-									<div className=" flex h-[66px] py-3.5 items-center gap-3.5 ">
-										<label className=" flex items-center gap-2.5 text-[var(--text-secondary)] ">
-											<input className=" hidden peer " type="checkbox" />
-											<div className=" w-[18px] h-[18px] aspect-square flex items-center justify-center appearance-none rounded-md border-[1px] border-solid border-[var(--border)] peer-checked:bg-[var(--primary)] peer-checked:border-[var(--primary)] ">
-												<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-													<path d="M3.3335 8.00002L6.66683 11.3334L13.3335 4.66669" stroke="white" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
-												</svg>
-											</div>
-										</label>
-										<div className=" flex items-center gap-2.5 ">
-											<div className=" flex flex-col justify-center items-start gap-0.5 ">
-												<p className=" text-[var(--text-primary)] text-sm not-italic font-medium leading-normal ">{role.name}</p>
-											</div>
-										</div>
-									</div>
-								</td>
-								<td>
-									<div className=" flex h-[66px] py-3.5 px-0 items-center gap-3.5 ">
-										<p className=" text-[var(--text-primary)] text-sm not-italic font-normal leading-normal ">{role.department.name}</p>
-									</div>
-								</td>
-								<td>
-									<div className=" flex h-[66px] py-3.5 px-0 items-center gap-3.5 ">
-										<p className=" text-[var(--text-primary)] text-sm not-italic font-normal leading-normal ">{role.key_responsibility.map(responsibility => responsibility.name).join(", ")}</p>
-									</div>
-								</td>
-								<td>
-									<div className=" flex h-[66px] py-3.5 px-0 items-center gap-3.5 ">
-										<p className=" text-[var(--text-primary)] text-sm not-italic font-normal leading-normal capitalize ">{role.user}</p>
-									</div>
-								</td>
-							</tr>
-						))
-					}
-				</tbody>
-			</table>
-		</>
-	)
+  const [sortKey, setSortKey] = useState<SortKey>('roleName');
+  const [sortDir, setSortDir] = useState<SortDir>('asc');
+
+  const toggleSort = (key: SortKey) => {
+    setSortKey(prev => (prev === key ? prev : key));
+    setSortDir(prev => (sortKey === key ? (prev === 'asc' ? 'desc' : 'asc') : 'asc'));
+  };
+
+  const sorted = useMemo(() => {
+    const arr = [...rows];
+    arr.sort((a, b) => {
+      const dir = sortDir === 'asc' ? 1 : -1;
+      let va: string | number = a[sortKey] as any;
+      let vb: string | number = b[sortKey] as any;
+
+      if (sortKey === 'color') {
+        return String(va).localeCompare(String(vb)) * dir;
+      }
+      if (sortKey === 'roleName' || sortKey === 'status') {
+        return String(va).localeCompare(String(vb), 'th') * dir;
+      }
+      return (va as number - (vb as number)) * dir;
+    });
+    return arr;
+  }, [rows, sortKey, sortDir]);
+
+  const HeaderCell = ({ label, k }: { label: string; k: SortKey }) => {
+    const active = sortKey === k;
+    return (
+      <th className="py-2.5">
+        <button
+          onClick={() => toggleSort(k)}
+          className="group flex items-center gap-1.5 text-xs uppercase text-[var(--text-secondary)]"
+        >
+          <span>{label}</span>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            className={`transition-transform ${active && sortDir === 'desc' ? 'rotate-180' : ''} opacity-60 group-hover:opacity-100`}
+          >
+            <path d="M8 4l4 5H4l4-5Z" fill="currentColor" />
+          </svg>
+        </button>
+      </th>
+    );
+  };
+
+  return (
+    <div className="w-full h-full overflow-hidden rounded-xl border border-[var(--border)]">
+      <table className="w-full">
+        <thead className="bg-[var(--background)]">
+          <tr className="text-[var(--text-secondary)] text-xs uppercase border-b border-[var(--border)]">
+            <th className="w-[48px] px-3 py-2.5">
+              <input type="checkbox" className="accent-[var(--primary)] w-4 h-4" />
+            </th>
+            <HeaderCell label="ชื่อบทบาท" k="roleName" />
+            <HeaderCell label="สี" k="color" />
+            <HeaderCell label="จำนวนผู้ใช้" k="userCount" />
+            <HeaderCell label="จำนวนสิทธิ์ที่ใช้ได้" k="unusedLicenses" />
+            <HeaderCell label="สถานะ" k="status" />
+            <th className="w-[56px]"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {sorted.map((r) => (
+            <tr key={r.id} className="border-b border-[var(--border)]">
+              <td className="px-3 py-2.5">
+                <input type="checkbox" className="accent-[var(--primary)] w-4 h-4" />
+              </td>
+
+              <td className="py-2.5">
+                <span className="text-sm text-[var(--text-primary)]">{r.roleName}</span>
+              </td>
+
+              <td className="py-2.5">
+                <span
+                  className="inline-block w-4 h-4 rounded"
+                  style={{ backgroundColor: r.color }}
+                  aria-label={`สีของบทบาท ${r.roleName}`}
+                  title={r.color}
+                />
+              </td>
+
+              <td className="py-2.5">
+                <span className="inline-flex items-center gap-2 text-sm">
+                  {/* ไอคอนคน */}
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z" fill="#8C8C8C" />
+                  </svg>
+                  {r.userCount}
+                </span>
+              </td>
+
+              <td className="py-2.5">
+                {/* แสดงเป็นลิงก์ตามภาพ */}
+                <button
+                  className="text-sm underline text-[#0163ff] hover:opacity-80"
+                  onClick={() => alert(`แสดงรายการสิทธิ์ที่ยังไม่ใช้ของ "${r.roleName}" (${r.unusedLicenses})`)}
+                >
+                  {r.unusedLicenses} สิทธิ์ที่ใช้ได้
+                </button>
+              </td>
+
+              <td className="py-2.5">
+                <span className="inline-flex items-center gap-2 text-sm">
+                  <span className={`inline-block w-2.5 h-2.5 rounded-full ${r.status === 'ใช้งานอยู่' ? 'bg-[#32D74B]' : 'bg-[#FF3B30]'}`} />
+                  {r.status}
+                </span>
+              </td>
+
+              <td className="py-2.5 pr-3 text-right">
+                <button className="inline-flex w-8 h-8 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--input-default)]">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M7.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm6 0A1.5 1.5 0 1 1 12 10.5 1.5 1.5 0 0 1 13.5 12ZM21 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" fill="#969696"/>
+                  </svg>
+                </button>
+              </td>
+            </tr>
+          ))}
+
+          {sorted.length === 0 && (
+            <tr>
+              <td colSpan={7} className="py-8 text-center text-sm text-[var(--text-secondary)]">
+                ไม่พบข้อมูล
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+    </div>
+  );
 }

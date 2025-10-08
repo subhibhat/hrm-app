@@ -15,26 +15,26 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
 	const [isLoad, setIsLoad] = useState<boolean>(false);
 	const [isAuth, setIsAuth] = useState<boolean>(false);
 
-	useEffect(() => {
-		if (typeof window !== 'undefined') {
-			const isAuth = localStorage.getItem('is_login');
-			setIsAuth(Boolean(isAuth));
+	// useEffect(() => {
+	// 	if (typeof window !== 'undefined') {
+	// 		const isAuth = localStorage.getItem('is_login');
+	// 		setIsAuth(Boolean(isAuth));
 
-			if (!isAuth) {
-				router.replace('/auth/login')
-			}
-		}
+	// 		if (!isAuth) {
+	// 			router.replace('/auth/login')
+	// 		}
+	// 	}
 
-		setIsLoad(false);
-	}, [router, pathname]);
+	// 	setIsLoad(false);
+	// }, [router, pathname]);
 
-	if (isLoad) {
-		return <div>Loading & Verifying access...</div>;
-	}
+	// if (isLoad) {
+	// 	return <div>Loading & Verifying access...</div>;
+	// }
 
-	if (!isAuth && !pathname.startsWith('/auth')) {
-		return null;
-	}
+	// if (!isAuth && !pathname.startsWith('/auth')) {
+	// 	return null;
+	// }
 
 	return (
 		<div className=" flex w-full min-h-screen ">
