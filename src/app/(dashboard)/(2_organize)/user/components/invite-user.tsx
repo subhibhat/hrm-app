@@ -4,31 +4,39 @@ import Image from 'next/image';
 import React from 'react';
 import Frame from '../../../../../../public/Frame.svg';
 import Doc from '../../../../../../public/doccsv.svg';
+import { Modal, ModalContent, useDisclosure } from '@heroui/react';
 
-export default function InviteUser() {
+export default function InviteUser({
+  isOpen,
+  onOpenChange,
+}: {
+  isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
+}) {
+ 
   return (
+    <Modal isOpen={isOpen} onOpenChange={onOpenChange}   backdrop="opaque" 
+      classNames={{ wrapper: 'z-[1000]' }}   
+      portalContainer={
+        typeof document !== 'undefined' ? document.body : undefined
+      }                                      
+    >
+      <ModalContent>
+          {(onClose) => (
     <div className="inline-flex flex-col gap-2.5 rounded-lg">
       <div className="w-[462px] bg-[var(--background)] rounded-lg flex flex-col gap-5 border border-[var(--border)]">
-       
         <div className="h-11 px-[18px] py-3.5 border-b border-[var(--border)] flex justify-between items-center">
           <div className="text-[var(--text-primary)] text-sm font-medium leading-none">
             เชิญผู้ใช้เข้าสู่ระบบ
           </div>
-          <Image src={Frame} alt="icon" width={22} />
         </div>
 
         <div className="px-[18px] flex flex-col gap-5">
-          {/* Email */}
           <label className="w-full h-[38px] px-3.5 bg-[var(--input-default)] rounded-lg ring-1 ring-[var(--border)] flex items-center gap-2.5">
-            {/* ไอคอน */}
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
-              <path d="M2.5 7.5475V13.75C2.5 14.413..." fill="#969696" />
+             
             </svg>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="กรอกอีเมลผู้ใช้"
+            <input id="email" name="email" type="email"placeholder="กรอกอีเมลผู้ใช้"
               className="flex-1 bg-transparent outline-none text-[var(--text-primary)] text-sm"
             />
           </label>
@@ -111,5 +119,8 @@ export default function InviteUser() {
         <div className="w-[18px] h-[18px] rotate-180" />
       </div>
     </div>
+              )}
+        </ModalContent>
+    </Modal>
   );
 }

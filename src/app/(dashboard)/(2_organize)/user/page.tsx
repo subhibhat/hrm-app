@@ -4,16 +4,20 @@ import { useState } from "react";
 import UserTable from "./components/user-table";
 import JobTable from "./components/job-table";
 import RoleTable from "./components/role-table";
-import Inviteuser from "./components/invite-user";
+import InviteUser from "./components/invite-user";
 import Uploadcsv from "./components/upload-csv";
+import {  Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@heroui/react";
 
 export default function ProfilePage() {
 	const [currentTab, setCurrentTab] = useState<string>('users')
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	return (
 		<>
 		{/* <Inviteuser/> */}
 		{/* <Uploadcsv/> */}
+     
+ 			<InviteUser isOpen={isOpen} onOpenChange={onOpenChange} />
 			<div className=" flex p-[30px] pb-0 flex-col items-start gap-[30px] self-stretch border-b-[0.5px] border-solid border-[var(--border)] ">
 				<div className=" flex items-center gap-8 ">
 					<div className=" flex  items-start gap-[45px] ">
@@ -109,7 +113,7 @@ export default function ProfilePage() {
 
 			<div className=" flex flex-col justify-between items-start flex-[1_0_0] self-stretch bg-[var(--primary-foreground)] ">
 				<div className=" flex  flex-col items-start gap-2.5 flex-[1_0_0] self-stretch ">
-					<div className=" flex w-full p-5 flex-col items-start gap-[30px] border-[1px] border-solid border-[var(--border)] bg-white ">
+					<div className=" flex w-full p-5 flex-col items-start gap-[30px] rounded-lg border-solid border-[var(--border)] bg-white ">
 
 						{currentTab === '' || currentTab === 'users' && <UserTable />}
 						{currentTab === 'positions' && <JobTable />}

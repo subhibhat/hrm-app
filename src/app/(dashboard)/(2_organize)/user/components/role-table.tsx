@@ -110,7 +110,6 @@ export default function RoleTable() {
 
               <td className="py-2.5">
                 <span className="inline-flex items-center gap-2 text-sm">
-                  {/* ไอคอนคน */}
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                     <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z" fill="#8C8C8C" />
                   </svg>
@@ -119,7 +118,6 @@ export default function RoleTable() {
               </td>
 
               <td className="py-2.5">
-                {/* แสดงเป็นลิงก์ตามภาพ */}
                 <button
                   className="text-sm underline text-[#0163ff] hover:opacity-80"
                   onClick={() => alert(`แสดงรายการสิทธิ์ที่ยังไม่ใช้ของ "${r.roleName}" (${r.unusedLicenses})`)}

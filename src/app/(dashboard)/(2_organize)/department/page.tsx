@@ -2,14 +2,20 @@ import Departmemt from "./components/departmemt"
 export default function DepartmentPage() {
 	return (
 		<>
-			<div className=" flex p-[30px] pb-0 flex-col items-start gap-[30px] self-stretch border-b-[0.5px] border-solid border-[var(--border)] ">
-				<div className=" flex items-center gap-8 ">
-					<div className=" flex flex-col items-start gap-2.5 ">
-						<h1 className=" text-[var(--text-primary)] text-[26px] not-italic font-medium leading-[110%] tracking-[-0.52px] ">{ /* User Management */ }</h1>
-						<h2 className=" text-[var(--text-secondary)] text-sm not-italic font-normal leading-normal ">{ /* Manage system users, assign roles, and define job descriptions in one place. */ }</h2>
-					<Departmemt/>
-					</div>
-				</div>
+      <div className="p-[30px] pb-0 flex flex-col gap-[30px] self-stretch border-b border-[var(--border)]">
+        <div className="flex items-center gap-8">
+          <div className="flex flex-col gap-2.5">
+            <h1 className="text-[var(--text-primary)] text-[26px] font-medium leading-[110%] tracking-[-0.52px]"></h1>
+            <h2 className="text-[var(--text-secondary)] text-sm leading-normal"></h2>
+          </div>
+        </div>
+      </div>
+      
+      <div className="p-[30px] pt-5 flex flex-col gap-2.5 bg-white h-full ">
+        <div className="w-full  self-stretch ">
+          <Departmemt /> 
+        </div>
+      </div>
 				{/* <div className=" flex items-start gap-5 self-stretch ">
 					<div className=" flex py-2.5 px-0 justify-center items-center gap-2.5 border-b-[2px] border-solid border-b-[#3D61FB] ">
 						<div className=" w-[20px] h-[20px] ">
@@ -36,7 +42,6 @@ export default function DepartmentPage() {
 						<div className=" text-[var(--text-secondary)] text-sm not-italic font-medium leading-normal ">Roles & Permission</div>
 					</div>
 				</div> */}
-			</div>
 			<div className=" flex p-[30px] flex-col items-start gap-2.5 flex-[1_0_0] self-stretch bg-[var(--primary-foreground)] ">
 			</div>
 		</>

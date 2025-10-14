@@ -117,23 +117,17 @@ export default function DepartmentTable() {
 
   return (
     <div className="w-full">
-      {/* Top controls */}
       <div className="mb-3 flex items-start justify-between">
         <div className="flex gap-2">
-          {/* Search */}
           <label className="flex items-center gap-2 w-[280px] h-[38px] px-3.5 rounded-lg border border-[var(--border)] bg-white">
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-              <path d="M12.5253 13.4087C11.1658 14.5409 9.42211 15.1053 7.65702 14.9846C5.89192 14.8639 4.2413 14.0674 3.04849 12.7608C1.85567 11.4541 1.2125 9.73794 1.25276 7.96918C1.29301 6.20043 2.0136 4.51528 3.26462 3.26425C4.51564 2.01323 6.20079 1.29265 7.96955 1.25239C9.73831 1.21214 11.4545 1.85531 12.7611 3.04812C14.0678 4.24093 14.8643 5.89156 14.985 7.65665C15.1056 9.42174 14.5412 11.1654 13.4091 12.525L17.3178 16.4325C17.4352 16.5498 17.5011 16.709 17.5011 16.875C17.5011 17.0409 17.4352 17.2001 17.3178 17.3175C17.2005 17.4348 17.0413 17.5008 16.8753 17.5008C16.7094 17.5008 16.5502 17.4348 16.4328 17.3175L12.5253 13.4087Z" fill="#1F1F1F"/>
-            </svg>
-            <input
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              placeholder="ค้นหาภาควิชา"
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M12.5253 13.4087C11.1658 14.5409 9.42211 15.1053 7.65702 14.9846C5.89192 14.8639 4.2413 14.0674 3.04849 12.7608C1.85567 11.4541 1.2125 9.73794 1.25276 7.96918C1.29301 6.20043 2.0136 4.51528 3.26462 3.26425C4.51564 2.01323 6.20079 1.29265 7.96955 1.25239C9.73831 1.21214 11.4545 1.85531 12.7611 3.04812C14.0678 4.24093 14.8643 5.89156 14.985 7.65665C15.1056 9.42174 14.5412 11.1654 13.4091 12.525L17.3178 16.4325C17.4352 16.5498 17.5011 16.709 17.5011 16.875C17.5011 17.0409 17.4352 17.2001 17.3178 17.3175C17.2005 17.4348 17.0413 17.5008 16.8753 17.5008C16.7094 17.5008 16.5502 17.4348 16.4328 17.3175L12.5253 13.4087ZM13.7503 8.12497C13.7503 7.38629 13.6048 6.65483 13.3222 5.97238C13.0395 5.28992 12.6251 4.66983 12.1028 4.1475C11.5805 3.62517 10.9604 3.21083 10.2779 2.92815C9.59548 2.64547 8.86402 2.49997 8.12534 2.49997C7.38665 2.49997 6.6552 2.64547 5.97274 2.92815C5.29029 3.21083 4.67019 3.62517 4.14786 4.1475C3.62553 4.66983 3.2112 5.28992 2.92852 5.97238C2.64583 6.65483 2.50034 7.38629 2.50034 8.12497C2.50034 9.61682 3.09297 11.0476 4.14786 12.1024C5.20276 13.1573 6.6335 13.75 8.12534 13.75C9.61718 13.75 11.0479 13.1573 12.1028 12.1024C13.1577 11.0476 13.7503 9.61682 13.7503 8.12497Z" fill="#0E121A"/>
+              </svg>
+            <input value={search} onChange={e => setSearch(e.target.value)} placeholder="ค้นหาภาควิชา"
               className="text-sm w-full h-full focus:outline-none"
             />
           </label>
 
-          {/* Filters */}
           <div className="relative">
             <button
               onClick={() => setShowFilters(v => !v)}
@@ -210,8 +204,8 @@ export default function DepartmentTable() {
         </div>
       </div>
 
-      {/* Table */}
-      <div className="overflow-hidden rounded-xl border border-[var(--border)]">
+      
+      <div className="overflow-hidden rounded-xl border border-[var(--border)]  ">
         <table className="w-full">
           <thead className="bg-[var(--background)]">
             <tr className="text-[var(--text-secondary)] text-xs uppercase border-b border-[var(--border)]">
